@@ -1,0 +1,48 @@
+unit u_mt;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Shape1: TShape;
+    Shape2: TShape;
+    Shape3: TShape;
+    Shape4: TShape;
+    Shape5: TShape;
+    Shape6: TShape;
+    Shape7: TShape;
+    Shape8: TShape;
+    StaticText1: TStaticText;
+    MainMenu1: TMainMenu;
+    Price1: TMenuItem;
+    Seats1: TMenuItem;
+    otal1: TMenuItem;
+    otal2: TMenuItem;
+    procedure Shape1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Number1, Number2: real;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Shape1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  Number1 := Number1 + 1;
+  Number2 := Number2 + 30000;
+end;
+
+end.
