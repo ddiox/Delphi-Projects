@@ -1,0 +1,38 @@
+unit Unit4;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, ADODB, StdCtrls;
+
+type
+  TfrmAccountSettings = class(TForm)
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAccountSettings: TfrmAccountSettings;
+
+implementation
+
+uses Unit3;
+
+{$R *.dfm}
+
+procedure TfrmAccountSettings.Button1Click(Sender: TObject);
+begin
+  dmLogin.adoUser.Edit;
+  dmLogin.adoUser.FieldByName('password').AsString := Edit1.Text;
+  dmLogin.adoUser.Post;
+
+  showMessage('Data telah diubah');
+end;
+
+end.
+
+
